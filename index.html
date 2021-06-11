@@ -1,0 +1,86 @@
+g<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>EnquirieS test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            form{
+                float: left;
+                margin-left: 30%;
+                width: 40%;
+                /*border: red 1px solid;*/
+                text-align: center;
+            }
+            .form-group{
+                margin-bottom: 10px;
+            }
+            body{
+                padding: 10px;
+            }
+            h2{
+                text-align: center;
+            }
+            label{
+                font-weight: bold;
+                width: 20%;
+                /*border: 1px solid green;*/
+                display: inline-block;
+            }
+            textarea{
+                width: 80%;
+                margin-top: 8px;
+                min-height: 150px;
+            }
+            button{
+                background-color: blue;
+                color: white;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Enquires</h2>
+        <form id="eform">
+            <div class="form-group">
+                <label>Name</label>
+                <input name="name" type="text" placeholder="Enter name" />
+            </div>
+            <div class="form-group">
+                <label>Number</label>
+                <input name="number" type="number" placeholder="Enter number" />
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input name="email" type="email" placeholder="Enter email" />
+            </div>
+            <div class="form-group">
+                <label>Enquiry</label>
+                <textarea name="enquiry"></textarea>
+            </div>
+            <div class="action-buttons">
+                <button id="submit-button" type="submit">Submit</button>
+            </div>
+        </form>
+        <script type="text/javascript">
+               var form = document.getElementById('eform');
+               var button = document.getElementById('submit-button');
+               button.addEventListener('click', function(){
+                   var display = '';
+                   display += form.elements.name.value + " " + form.elements.number.value + " " + form.elements.email.value + "\n" + form.elements.enquiry.value;
+                   alert(display);
+                   form.clear();
+               });
+        </script>
+    </body>
+</html>
